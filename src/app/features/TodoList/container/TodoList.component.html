@@ -1,0 +1,15 @@
+<div class="title-container">
+  <h1>Bienvenue</h1>
+</div>
+
+<div class="todolist-page-container">
+  <button type="button" (click)="btnView()">Consulter mes TodoLists</button>
+  <button type="button">Créer une TodoList</button>
+</div>
+
+<div class="pages-container">
+  @if(viewClicked){
+    <app-todo-list-view></app-todo-list-view>
+  }
+</div>
+

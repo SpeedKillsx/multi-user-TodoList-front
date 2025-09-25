@@ -1,0 +1,12 @@
+<div class="view-page-container">
+    <div class="title-container">
+        Tes TodoLists
+    </div>
+    <div class="view-todolists">
+        @for (todo of userTodoList; track $index) {
+            <div class="todo-item">
+                {{todo.todolist_name}}
+            </div>
+        }
+    </div>
+</div>

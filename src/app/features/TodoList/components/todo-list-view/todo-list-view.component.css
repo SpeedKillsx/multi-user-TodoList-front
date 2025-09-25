@@ -1,0 +1,31 @@
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.view-page-container {
+  display: grid;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.view-page-container button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.view-page-container button:hover {
+  background-color: #ddd;
+}
+
+.view-page-container button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
