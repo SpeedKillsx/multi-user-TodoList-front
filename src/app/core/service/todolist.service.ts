@@ -12,4 +12,5 @@ export class TodolistService {
   getUserTodos(user_id:number){
     return this.http.get<any>(`${this.baseUrl}/user/${user_id}`)
   }
+  
 }
