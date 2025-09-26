@@ -1,31 +1,91 @@
+:root {
+  --primary: #4A90E2;
+  --primary-accent: #5AC8FA;
+  --gray-light: #F5F7FA;
+  --gray-medium: #E1E8ED;
+  --text-dark: #2C3E50;
+  --success: #2ECC71;
+
+  --font-base: 1rem;
+  --radius: 10px;
+  --transition: 0.3s ease;
+}
+
+
+body {
+  background-color: var(--gray-light);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
 .title-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .view-page-container {
   display: grid;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .view-page-container button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #f0f0f0;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--gray-medium);
+  background-color: rgb(145, 118, 118);
+  color: var(--text-dark);
   cursor: pointer;
-  border-radius: 8px 8px 0 0;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  border-radius: var(--radius) var(--radius) 0 0;
+  font-size: var(--font-base);
+  font-weight: 500;
+  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .view-page-container button:hover {
-  background-color: #ddd;
+  background-color: var(--primary-accent);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .view-page-container button.active {
-  background-color: #fff;
-  border-bottom: 2px solid #007bff;
-  font-weight: bold;
+  background-color: var(--primary);
+  color: #fff;
+  border-bottom: 3px solid var(--primary-accent);
+  font-weight: 600;
+}
+
+
+.todo-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding: 0.5rem;
+}
+
+.todo-item button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--success);
+  color: #000000;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.todo-item button:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 3px;
 }
