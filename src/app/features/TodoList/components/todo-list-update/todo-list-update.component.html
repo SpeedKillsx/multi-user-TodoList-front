@@ -1,1 +1,21 @@
-<p>todo-list-update works!</p>
+<div class="todolist-updated-container" *ngIf="todolistInformation">
+  <h3>Todo List: {{ todolistInformation.todolist_name }}</h3>
+
+  <ul>
+    <li *ngFor="let task of todolistInformation.tasks">
+      <strong>Task:</strong> {{ task.description }}
+      <span *ngIf="task.is_done" style="color: green;"> Done</span>
+      <span *ngIf="!task.is_done" style="color: red;"> Not Done</span>
+    </li>
+  </ul>
+</div>
+<div>
+  <input type="text" [(ngModel)]="newTaskDescription" placeholder="New task description" />
+  <button mat-raised-button color="primary" (click)="addTask(newTaskDescription)">
+    Add Task
+  </button>
+</div>
+
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" class="error">{{ error }}</div>

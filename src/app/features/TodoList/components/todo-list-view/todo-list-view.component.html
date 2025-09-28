@@ -5,7 +5,7 @@
     <div class="view-todolists">
         @for (todo of userTodoList; track $index) {
             <div class="todo-item">
-                {{todo.todolist_name}} <button type="button">Modifier</button>
+                {{todo.todolist_name}} <button type="button" mat-raised-button color="primary" (click)="openTodoModal(todo.id)">Modifier</button>
             </div>
         }
     </div>

@@ -1,0 +1,59 @@
+.todolist-updated-container {
+  background: #f9fafb;         /* light background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;              /* center the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 10px;;
+}
+
+.todolist-updated-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.todolist-updated-container ul {
+  list-style-type: none;       /* remove bullets */
+  padding: 0;
+}
+
+.todolist-updated-container li {
+  background: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #3f51b5; /* Material Indigo accent */
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.todolist-updated-container li strong {
+  color: #3f51b5;
+}
+
+.todolist-updated-container .done {
+  color: #2e7d32;              /* green for done */
+  font-weight: bold;
+}
+
+.todolist-updated-container .not-done {
+  color: #d32f2f;              /* red for not done */
+  font-weight: bold;
+}
+
+/* Loading & error states */
+.error {
+  color: #d32f2f;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+}
