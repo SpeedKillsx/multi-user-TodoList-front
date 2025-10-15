@@ -4,7 +4,7 @@ import { TodoList } from '../../../../core/model/TodoList';
 import { AuthService } from '../../../../core/service/auth.service';
 import { TodoListUpdateComponent } from '../todo-list-update/todo-list-update.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-todo-list-view',
   standalone: true,
@@ -28,11 +28,14 @@ export class TodoListViewComponent implements OnInit{
       });
   }
 
- openTodoModal(todolistId:number) {
+  openTodoModal(todolistId:number) {
     this.dialog.open(TodoListUpdateComponent, {
       width: '800px',     
       disableClose: false,
       data: { todolistId }
     });
   }
+
+
+  
 }

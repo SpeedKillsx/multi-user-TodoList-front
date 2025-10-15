@@ -21,7 +21,7 @@ export class TodoListUpdateComponent implements OnInit {
 
   loading = true;
   error = '';
-
+  
   constructor(
     private todolistService: TodolistService,
     private dialogRef: MatDialogRef<TodoListUpdateComponent>,
@@ -52,9 +52,12 @@ export class TodoListUpdateComponent implements OnInit {
     const newTask: Task = {
       id: 0,
       description: description,
+      creation_date: new Date().toISOString().split('T')[0],
       is_done: false,
       id_todo_list: this.data.todolistId
     };
+
+    console.log(newTask)
 
     this.taskService.addTask(newTask).subscribe({
       next: (res) => {

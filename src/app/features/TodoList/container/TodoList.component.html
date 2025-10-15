@@ -3,13 +3,12 @@
 </div>
 
 <div class="todolist-page-container">
-  <button type="button" (click)="btnView()">Consulter mes TodoLists</button>
-  <button type="button">Créer une TodoList</button>
+  <button type="button" (click)="btnView(true)">Consulter mes TodoLists</button>
+  <button type="button" (click)="btnView(false)">Créer une TodoList</button>
 </div>
 
 <div class="pages-container">
-  @if(viewClicked){
-    <app-todo-list-view></app-todo-list-view>
-  }
+  <app-todo-list-view *ngIf="viewClicked"></app-todo-list-view>
+  <app-todo-list-add *ngIf="!viewClicked"></app-todo-list-add>
 </div>
 
