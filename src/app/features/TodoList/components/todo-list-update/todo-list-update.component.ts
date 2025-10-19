@@ -70,6 +70,29 @@ export class TodoListUpdateComponent implements OnInit {
     });
   }
 
+  updateTask(taskId: number) {
+  this.todolistService.getTodoListInformation(this.data.todolistId).subscribe({
+    next: (response) => {
+      const taskInitial = response.tasks.find((t: any) => t.id === taskId);
+      if (!taskInitial) return;
+
+      const newState = !taskInitial.is_done;
+
+      this.taskService.updateTask(taskInitial.id, newState).subscribe({
+        next: (updatedTask) => {
+          taskInitial.is_done = newState;
+        },
+        error: (err) => {
+          console.error(' Failed to update task:', err);
+        }
+      });
+    },
+    error: (err) => {
+      console.error(' Failed to load todo list:', err);
+    }
+  });
+}
+
   close() {
     this.dialogRef.close();
   }

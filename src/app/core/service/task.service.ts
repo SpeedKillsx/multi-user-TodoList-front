@@ -12,4 +12,12 @@ export class TaskService {
   addTask(task:Task){
      return this.http.post(`${this.baseUrl}/add`, task);
   }
+
+  updateTask(taskId:number, state:boolean){
+    const params = {
+      task_id:taskId,
+      state: state
+    }
+    return this.http.put(`${this.baseUrl}/update`, params)
+  }
 }
