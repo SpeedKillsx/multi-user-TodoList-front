@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TodolistService {
 
-  baseUrl:string = "http://localhost:8000/todo";
+  baseUrl:string = "https://oxydasic-allison-monometrical.ngrok-free.dev/todo";
   http = inject(HttpClient)
 
   getUserTodos(user_id:number){

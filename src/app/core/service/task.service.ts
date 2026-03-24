@@ -6,7 +6,7 @@ import { Task } from '../model/Task';
   providedIn: 'root'
 })
 export class TaskService {
-  baseUrl:string ="http://localhost:8000/task";
+  baseUrl:string ="https://oxydasic-allison-monometrical.ngrok-free.dev/task";
   http = inject(HttpClient)
 
   addTask(task:Task){

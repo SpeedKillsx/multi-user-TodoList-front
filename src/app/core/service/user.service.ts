@@ -6,7 +6,7 @@ import { User } from '../model/User';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl:string = "http://localhost:8000/user";
+  baseUrl:string = "https://oxydasic-allison-monometrical.ngrok-free.dev/user";
   http = inject(HttpClient)
 
 

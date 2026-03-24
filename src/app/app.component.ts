@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { environment } from '../environments/environment';
+fetch(environment.apiUrl);
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,4 +11,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'multi-user-TodoList-front';
+
 }

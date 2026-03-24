@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todolist-front
+spec:
+  selector:
+    matchLabels:
+      app: todolist-front
+  template:
+    metadata:
+      labels:
+        app: todolist-front
+    spec:
+      containers:
+      - name: todolist-front
+        image: docker.io/library/todolist-api-front:1.0
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
